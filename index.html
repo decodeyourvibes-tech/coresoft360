@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CoreSoft 360 – Clickable Banner</title>
+<style>
+  /* ========== Layout ========== */
+  .banner-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 411px;      /* original PNG width */
+    margin: 0 auto;        /* center the banner */
+  }
+
+  .banner {
+    width: 100%;
+    height: auto;          /* responsive scaling */
+    display: block;
+  }
+
+  /* ========== Clickable hotspots ========== */
+  .click-btn {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    /* Hover */
+    transition: opacity 0.18s ease;
+  }
+  .click-btn:hover {
+    opacity: 0.12;         /* subtle hover feedback */
+  }
+
+  /* 
+    Coordinate model: original PNG 411 × 876
+    Positions defined in % so they scale with the image
+  */
+
+  /* LEFT (WHITE) BUTTON — “Request Full Curriculum” */
+  .btn-request {
+    left: 7.5%;          /* X from left */
+    top: 90.4%;          /* Y from top */
+    width: 40.0%;
+    height: 4.8%;
+  }
+
+  /* RIGHT (BLUE) BUTTON — “Schedule a Consultation” */
+  .btn-consult {
+    left: 52.5%;
+    top: 90.4%;
+    width: 40.0%;
+    height: 4.8%;
+  }
+
+  /* ========== Mobile tap comfort (slightly larger hit area) ========== */
+  @media (max-width: 480px) {
+    .btn-request,
+    .btn-consult {
+      height: 5.6%;        /* increase tap height a bit */
+    }
+  }
+
+  /* ========== Optional: Turn on debug to see rectangles ========== */
+  /* .click-btn { background: rgba(255,0,0,0.25); }  */
+</style>
+</head>
+<body>
+
+<div class="banner-wrapper">
+  <!-- Your PNG -->
+  <img src="CoreSoft360_Banner.png" alt="CoreSoft 360 Banner" class="banner" />
+
+  <!-- LEFT (WHITE) BUTTON -->
+  <a
+    class="click-btn btn-request"
+    href="https://wa.me/918999905021?text=Hi%2C%20I%20am%20super%20interested%20in%20the%20program%2C%20please%20share%20the%20curriculum"
+    target="_blank"
+    aria-label="Request Full Curriculum"
+  ></a>
+
+  <!-- RIGHT (BLUE) BUTTON -->
+  <a
+    class="click-btn btn-consult"
+    href="https://wa.me/918999905021?text=Hi%20I%20am%20super%20curious%2C%20please%20provide%20me%20a%20slot%20for%20consultation"
+    target="_blank"
+    aria-label="Schedule a Consultation"
+  ></a>
+</div>
+
+</body>
+</html>
